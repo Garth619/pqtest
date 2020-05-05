@@ -1,0 +1,86 @@
+
+// vars/mixins
+
+@import "imports/utils/variables",
+				
+				"imports/components/buttons/variables",
+				
+				"imports/layout/global/variables",
+				"imports/layout/header/variables",
+				"imports/layout/footer/variables",
+				"imports/layout/internalbanner/variables",
+				"imports/layout/locations/variables",
+				"imports/layout/navigation/variables",
+				"imports/layout/sidebar/variables",
+				
+				"imports/templates/404/variables",
+				"imports/templates/about/variables",
+				"imports/templates/attorneyprofile/variables",
+				"imports/templates/blog/variables",
+				"imports/templates/caseresults/variables",
+				"imports/templates/contactpage/variables",
+				"imports/templates/homepage/sectionone/variables",
+				"imports/templates/homepage/sectiontwo/variables",
+				"imports/templates/homepage/sectionthree/variables",
+				"imports/templates/homepage/sectionfour/variables",
+				"imports/templates/homepage/sectionsix/variables",
+				"imports/templates/meetteam/variables",
+				"imports/templates/pa-directory/variables",
+				"imports/templates/testimonials/variables",
+				"imports/templates/videocenter/variables",
+				
+				"imports/utils/mixins";
+				
+// third party files
+				
+@import	"imports/vendors/slick",
+				"imports/vendors/lity";
+
+// reset
+
+@import	"imports/base/reset";
+				
+// layout 			
+
+@import	"imports/layout/global/content",
+				"imports/layout/global/global",
+				"imports/layout/header/header",
+				"imports/layout/navigation/navigation",
+				"imports/layout/internalbanner/internal-banner",
+				"imports/layout/sidebar/sidebar",
+				"imports/layout/locations/locations",
+				"imports/layout/footer/footer";
+				
+// components
+
+@import	"imports/components/buttons/buttons";
+
+// page templates 
+				
+@import	"imports/templates/homepage/sectionone/section_one_global",
+				"imports/templates/homepage/sectionone/section_one_video",
+				"imports/templates/homepage/sectionone/section_one_regular",
+				"imports/templates/homepage/sectiontwo/section_two",
+				"imports/templates/homepage/sectionthree/section_three",
+				"imports/templates/homepage/sectionfour/section_four",
+				"imports/templates/homepage/sectionfive/section_five",
+				"imports/templates/homepage/sectionsix/section_six",
+				"imports/templates/pa-directory/template-pa-directory",
+				"imports/templates/testimonials/template-testimonials",
+				"imports/templates/about/template-about",
+				"imports/templates/attorneyprofile/template-attbio",
+				"imports/templates/caseresults/template-results",
+				"imports/templates/meetteam/template-meetteam",
+				"imports/templates/videocenter/template-video",
+				"imports/templates/contactpage/contact_global",
+				"imports/templates/contactpage/contact_map",
+				"imports/templates/contactpage/contact_reg",
+				"imports/templates/blog/template-blog",
+				"imports/templates/404/not-found";
+				
+// animations (listed last so it will override anything above if needed 
+
+@import	"imports/layout/animations";
+				
+
+

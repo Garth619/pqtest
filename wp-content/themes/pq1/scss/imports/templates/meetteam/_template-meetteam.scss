@@ -1,0 +1,148 @@
+
+
+#meet_team {
+	display: flex;
+	flex-wrap:wrap;
+	justify-content: space-between;
+	max-width: 1240px;
+	margin: 66px auto -80px;
+	@include flex(space-between,null,null,wrap);
+	@include mq(xsmall_laptop) {
+		max-width: 860px;
+		margin:90px auto -80px;
+	}
+	@include mq(xsmall_tablet) {
+		display: block;
+		max-width: 430px;
+		margin:90px auto -50px;
+	} 
+	@include mq(xlarge_mobile) {
+		margin: 50px auto -80px;
+	}
+	&:after {
+		content:"";
+		flex-basis:30%;
+		@include mq(xsmall_laptop) {
+			flex-basis: 47%;
+		}
+	}
+}
+
+
+.single_att {
+	flex-basis: 30%;
+	margin-bottom: 80px;
+	@include mq(xsmall_laptop) {
+		flex-basis: 47%;
+	}
+	@include mq(tablet) {
+		margin-bottom: 50px;
+	}
+	&:hover {
+		a {
+			.att_img {
+				img {
+					transform: scale(1.1);
+				}
+			}
+			.att_info_wrapper {
+				.att_arrow {
+					width:100%;
+					.att_arrow_inner {
+						&:before {
+							opacity: 0;
+						}
+						.view_profile {
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+	a {
+		text-decoration: none;
+	}
+	.att_img {
+		overflow: hidden;
+		position: relative;
+		img {
+			width:100%;
+			transform: scale(1);
+			transform-origin: center center;
+			transition: transform 1200ms cubic-bezier(.17,.66,.34,.98);
+			@include image();
+		}
+	}
+	.att_info_wrapper {
+		display: flex;
+		position: relative;
+		overflow: hidden;
+		.att_info {
+			text-align: left;
+			background: $att_info_bg_color;
+			padding: 21px 67px 26px 20px;
+			flex-grow:1;
+			span {
+				display: block;
+				color:$meet_team_title_color;
+			}
+			span.att_name {
+				@include type((
+					size: $meet_team_name_size,
+					family:$secondaryfont,
+				));
+			}
+			span.att_position {
+				margin-top:5px;
+				@include type((
+					size: $meet_team_position_size,
+					family:$primaryfont,
+					weight:$meet_team_position_weight,
+					transform:uppercase,
+				));
+			}
+		}
+		.att_arrow {
+			flex-shrink: 0;
+			transition: all 400ms cubic-bezier(.17,.66,.34,.98);
+			@include abs(0,0,null,null);
+			@include box(43px,100%);
+			.att_arrow_inner {
+				background: $meet_team_arrow_bg_color;
+				@include flex(center,center);
+				@include abs(0,null,null,0);
+				@include box(100%);
+				.view_profile {
+					opacity: 0;
+					transition: all 200ms ease-in-out;
+					@include abs(0,null,null,0);
+					@include box(100%);
+					span {
+						content:"View Profile";
+						height: 100%;
+						@include flex(center,center);
+						@include margin_lr;
+						@include type((
+							size: $meet_team_view_all_size,
+							family:$secondaryfont,
+							color:$meet_team_title_color,
+						));
+						&:after {
+							margin-left:10px; 
+							@include tri(right,7px,9px,$meet_team_tri_bg_color);
+							@include box(0);
+						}
+					}
+				}
+				&:before {
+					opacity: 1; 
+					transform: translateX(0);
+					transition:opacity 300ms ease-in-out;
+					@include tri(right,7px,9px,$meet_team_tri_bg_color);
+					@include box(0);
+				}
+			}
+		}
+	}
+}

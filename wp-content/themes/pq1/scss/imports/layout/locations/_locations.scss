@@ -1,0 +1,334 @@
+#location_info {
+	max-width: 1530px;
+	padding:0 80px;
+	margin: 114px auto 0;
+	@include flex(space-between);
+	@include mq(large_laptop) {
+		margin: 96px auto 0;
+		max-width: 1200px;
+	}
+	@include mq(small_laptop) {
+		max-width: 1050px;
+		margin: 64px auto 0;
+	}
+	@include mq(small_tablet) {
+		flex-wrap: wrap;
+		max-width: 775px;
+		margin: 27px auto 0;
+	}
+	@include mq(xlarge_mobile) {
+		text-align: center;
+		margin: 94px auto 0;
+		display: block;
+		padding-left:34px;
+		padding-right:34px;
+	}
+}
+
+
+	.location_col {
+		span {
+			display: block;
+		}
+		a {
+			display: inline-block;
+		}
+		span.location_contact_title {
+			@include type((
+				size: $location_contact_title_size,
+				family:$secondaryfont,
+				color:$location_contact_title_color,
+				transform:capitalize
+			));
+			@include mq(large_laptop) {
+				font-size:$location_contact_title_size_large_laptop;
+			}
+			@include mq(small_laptop) {
+				font-size: $location_contact_title_size_small_laptop;
+			}
+			@include mq(small_tablet) {
+				font-size: $location_contact_title_size_small_tablet;
+			}
+		}
+		span.location_title {
+			margin-top:0px;
+			@include type((
+				size: $location_title_size,
+				spacing:$location_title_spacing,
+				family:$primaryfont,
+				color:$location_title_color,
+				transform:uppercase,
+				weight:$location_title_weight,
+			));
+			@include mq(large_laptop) {
+				font-size: $location_title_size_large_laptop;
+				margin-top: 0px;
+			}
+			@include mq(small_laptop) {
+				font-size: $location_title_size_small_laptop;
+				margin-top: 2px;
+			}
+			@include mq(small_tablet) {
+				line-height: $location_title_line_height_small_tablet;
+			}
+			&:after {
+				content:"";
+				display: block;
+				margin-top:28px;
+				background: $accent_color;
+				@include box(71px,5px);
+				@include mq(large_laptop) {
+					margin-top: 32px;
+				}
+				@include mq(small_laptop) {
+					margin-top: 22px;
+					height:4px;
+				}
+				@include mq(small_tablet) {
+					margin-top: 22px;
+				}
+				@include mq(xlarge_mobile) {
+					@include margin_lr;
+				}
+			}
+		}
+		a.location_phone {
+			margin-top:22px;
+			display: inline-block;
+			@include type((
+				size: $location_phone_size,
+				family:$primaryfont,
+				color:$location_phone_color,
+				weight:$location_phone_weight,
+			));
+			@include mq(large_laptop) {
+				font-size: $location_phone_size_large_laptop;
+				margin-top: 15px;
+			}
+			@include mq(small_laptop) {
+				font-size: $location_phone_size_small_laptop;
+				margin-top: 17px;
+			}
+			@include mq(small_tablet) {
+				 margin-top: 19px;
+			}
+		}
+		span.address {
+			margin-top: 30px;
+			@include type((
+				size: $location_address_size,
+				spacing:$location_address_spacing,
+				height: $location_address_line_height,
+				family:$secondaryfont,
+				color:$location_address_color,
+			));
+			@include mq(large_laptop) {
+				font-size: $location_address_size_large_laptop;
+				line-height: $location_address_line_height_large_laptop;
+			   margin-top: 21px;
+			}
+			@include mq(small_laptop) {
+				margin-top: 22px;
+				@include quick_type($location_address_size_small_laptop,$location_address_line_height_large_laptop,null);
+			}
+			@include mq(small_tablet) {
+				margin-top: 31px;
+			}
+			@include mq(xlarge_mobile) {
+				max-width: 305px;
+				@include margin_lr;
+				@include quick_type($location_address_size_xlarge_mobile,$location_address_line_height_xlarge_mobile,null);
+				
+			}
+			strong {
+				@include type((
+					color:$color_bright_one,
+					weight:$location_address_hightlight_weight,
+				));
+			}
+			a {
+				transition: all 200ms ease-in-out;
+				@include type((
+					color:$color_bright_one,
+				));
+				&:hover {
+					color:$color_bright_one;
+				}
+			}
+			&.info {
+				@include mq(small_laptop) {
+					
+				}
+			}
+		}
+		.location_tablet_layout {
+			@include mq(small_tablet) {
+				flex-basis: 47%;
+			}
+		}
+		a.get_directions {
+			margin-top: 10px;
+			transition: all 200ms ease-in-out;
+			@include type((
+				size: $location_directions_size,
+				spacing: $location_directions_spacing,
+				family:$primaryfont,
+				color:$location_directions_color,
+				weight:$location_directions_weight,
+				transform:uppercase,
+			));
+			@include mq(large_laptop) {
+				font-size: $location_directions_size_large_laptop;
+			}
+			@include mq(small_laptop) {
+				font-size: $location_directions_size_small_laptop;
+			}
+			@include mq(small_tablet) {
+				font-size: $location_directions_size_small_tablet;
+				
+			}
+			&:hover {
+				color:$location_directions_color_hover;
+			}
+		}
+		a.get_directions.complete_list {
+			margin-top: 55px;
+			@include mq(large_laptop) {
+				margin-top: 26px;
+			}
+			@include mq(small_tablet) {
+				margin-top: 31px;
+			}
+		}
+		.social_media {
+			margin-top: 59px;
+			max-width: 265px;
+			@include mq(large_laptop) {
+				max-width: 230px;
+			}
+			@include mq(small_laptop) {
+				margin-top: 45px;
+				//max-width: 212px;
+			}
+			@include mq(small_tablet) {
+				flex-basis:50%;
+				margin:0 20px 0 0;
+				//max-width: 235px;
+			}
+			@include mq(xlarge_mobile) {
+				margin: 41px auto 0;
+			}
+		}
+		.location_phone_wrapper {
+			margin-top: 40px;
+			@include mq(large_laptop) {
+				margin-top: 33px;
+			}
+			@include mq(small_laptop) {
+				margin-top: 28px;
+			}
+			@include mq(small_tablet) {
+				margin-top: 33px;
+			}
+			span, a {
+				display: inline-block;
+				@include type((
+					size: $location_phone_two_size,
+					spacing: $location_phone_two_spacing,
+					family:$secondaryfont,
+					color:$location_phone_two_color,
+				));
+				@include mq(large_laptop) {
+					font-size: $location_phone_two_size_large_laptop;
+				}
+				@include mq(small_laptop) {
+					font-size: $location_phone_two_size_small_laptop;
+				}
+			}
+			span {
+				margin-right:10px;
+				color: $location_phone_two_title_color;
+			}
+		}
+	}
+	
+	
+	.location_col {
+		flex-shrink:0;
+		&:nth-of-type(1) {
+			flex-basis:30%;
+			margin-right:30px;
+			@include mq(large_laptop) {
+				flex-basis:30%;
+				margin-right:0;
+			}
+			@include mq(small_laptop) {
+				flex-basis: 28%;
+			}
+			@include mq(small_tablet) {
+				flex-basis:100%;
+				margin-bottom: 85px;
+				@include flex(flex-start,flex-start);
+			}
+			@include mq(xlarge_mobile) {
+				display: block;
+				margin-bottom: 70px;
+			}
+		}
+		&:nth-of-type(2) {
+			flex-basis:27%;
+			@include mq(large_laptop) {
+				flex-basis: 25%;
+			}
+			@include mq(small_laptop) {
+				flex-basis: 27%;
+			}
+			@include mq(small_tablet) {
+				flex-basis: 47%;
+			}
+			@include mq(xlarge_mobile) {
+				
+			}
+		}
+		&:nth-of-type(3) {
+			flex-basis:27%;
+			margin-right:40px;
+			@include mq(large_laptop) {
+				flex-basis: 29%;
+				margin-right:0px;
+			}
+			@include mq(small_laptop) {
+				flex-basis: 31%;
+			}
+			
+			@include mq(small_tablet) {
+				flex-basis: 52%;
+			}
+			@include mq(xlarge_mobile) {
+				margin-top:80px;
+			}
+			
+		}
+	}
+	
+	
+	.social_media {
+		@include flex(space-between,flex-end);
+		a {
+			text-decoration: none;
+			&:hover {
+				svg.social {
+					path {
+						fill:$sm_color_hover;
+					}
+				}
+			}
+			svg.social {
+				path {
+					fill:$sm_color;
+					transition: all 200ms ease-in-out;
+				}
+			}
+		}
+	}
+	

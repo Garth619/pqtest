@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="premiumquicklauch1-themedocumentation">Premium Quicklauch 1 - Theme Documentation</h1>
+
+<h2 id="scssstructure">SCSS Structure</h2>
+
+<p>SCSS is broken up into various folders and partials:</p>
+
+<ul>
+<li>style.scss</li>
+<li>scss
+
+<ul>
+<li>main.scss</li>
+<li>imports
+
+<ul>
+<li>base</li>
+<li>components</li>
+<li>layout</li>
+<li>templates</li>
+<li>utils</li>
+<li>vendors</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Each folder inside <strong>imports</strong> contain specific partials along with specific variable.scss files</p>
+
+<h3 id="style.scss">style.scss</h3>
+
+<p>style.scss is the file you will use to update/override all variables on the theme. When setting up the new project, make sure this file gets processed into style.css. If using Codekit I like to make sure style.scss gets processed into a compressed, minified file with <code>autoprefixed</code> and <code>create a source map</code> turned on.</p>
+
+<h3 id="main.scss">main.scss</h3>
+
+<p>This files consists of all the partials for the project</p>
+
+<h3 id="base">base</h3>
+
+<p>Contains a reset partial</p>
+
+<h3 id="components">components</h3>
+
+<p>Contains components like buttons</p>
+
+<h3 id="layout">layout</h3>
+
+<p>Contains global layout partials like header, sidebar, footer etc</p>
+
+<h3 id="templates">templates</h3>
+
+<p>Contains all page templates</p>
+
+<h3 id="utils">utils</h3>
+
+<p>Contains the theme&#8217;s <strong>_mixin.scss</strong> as well as the global <strong>_variables.scss</strong>. However, each section of the theme has its own local <strong>_variables.scss</strong> file to work alongside its partials for easier viewing.</p>
+
+<h3 id="vendors">vendors</h3>
+
+<p>Contains third party css for slick slider, lity (youtube lightbox) etc</p>
+
+<h2 id="gettingfamiliarwithscssworkflow">Getting Familiar with SCSS workflow</h2>
+
+<h3 id="variables-fontsandcolors">Variables - Fonts and Colors</h3>
+
+<p>Most of the work involved on making the theme look like the mock up will consist of overriding font and color variables in <strong>style.scss</strong>. All <strong>_variables.scss</strong> partials throughout the theme are only meant to be used as a reference.</p>
+
+<p><strong>Do not edit the _variable.scss directly or something will most definitely break.</strong></p>
+
+<p>To begin:</p>
+
+<ol>
+<li>Open <strong>scss/imports/utils/_variables.scss</strong></li>
+<li>Open <strong>style.scss</strong></li>
+</ol>
+
+<p>The best workflow will be referencing a <strong>_variable.scss</strong> partial and adding those variables to <strong>style.scss</strong>.</p>
+
+<p><strong>_variables.scss</strong> has variables assigned like fonts, colors and media queries. They each have <strong>!default</strong> which means that these are fallback/default values. To override variables for your new theme, copy variables over to <strong>style.scss</strong> and add under <strong>&quot;Start Here: Custom Variables</strong>. Make sure your variables do not have the !default flag as they do in the <strong>_variables.scss</strong> file. There are a couple setup in <strong>style.scss</strong> and ready to go for you as an example. That&#8217;s it. After processing, you should see your changes take place to your new theme.</p>
+
+<p>I have attempted to make a naming sequence for each variable. There is a descriptive name along with size/line-height/color/spacing/weight, followed by the media query name. Media query sizes and names can be referenced in <strong>_variable.scss</strong> as well.</p>
+
+<p>Ideally it would have been nice to enter a font size rem once and then have it change automatically in all media queries through various sass functions. However, with the mock ups needing to be so precise I have just used hard coded px values for fonts for each media query.</p>
+
+<h3 id="importnewgooglefontsandadobefonts">@import New Google Fonts and Adobe Fonts</h3>
+
+<p>@import urls for Google and Adobe Fonts can be added in the Wordpress dashboard under Theme Options -&gt; Fonts. These get loaded into style tags in head.</p>
+
+<p><code>'https://fonts.googleapis.com/css2?family=Martel:wght@400;600;700&amp;family=Work+Sans:wght@400;500;700&amp;display=swap'</code></p>
+
+<p>Then in <strong>style.scss</strong> add</p>
+
+<pre><code>$primaryfont: 'Work Sans', sans-serif;
+$secondaryfont: 'Martel', serif;
+
+</code></pre>
+
+<h3 id="partials-marginpaddingandanyotherchanges">Partials - Margin/Padding and Any Other Changes</h3>
+
+<p>Anything other than fonts or colors will need to be updated in the partial files such as margin, padding etc (margins and padding have not had variables assigned but hopefully a future version will). The designers are aware that margins and padding don&#8217;t have to be perfect. The whole idea of building PQL Themes is to update fonts, colors, backgrounds, images etc and not spend time on every little positioning aspect. But if a margin etc needs to be adjusted thats totally finse too.</p>
+
+<p>Partials contain alot of <code>@includes</code>.</p>
+
+<p>Get familiar with <strong>scss/imports/utils/_mixins.scss</strong> to better understand all of the <strong>@includes</strong> throughout the theme. They include:</p>
+
+<ul>
+<li>typography</li>
+<li>media queries</li>
+<li>flexbox</li>
+<li>width/height</li>
+<li>positioning</li>
+<li>responsive images</li>
+<li>triangles</li>
+</ul>
+
+<p><strong>Note: Do not edit this file as it may break something in the partial files!! If a new and improved mixin is needed, we can definitely add that in through a pull request.</strong></p>
+
+<h3 id="addinginnewfeaturesorlayouts">Adding in New Features or Layouts</h3>
+
+<p>If there is a big change on the mock up that isn&#8217;t reflected in this build then its probably appropriate to make a second layout option on your site that we can merge in.</p>
+
+<h3 id="usingcsssourcemappingininspector">Using CSS Source Mapping in Inspector</h3>
+
+<p>By default, this theme is taking <strong>style.css</strong> and injecting into the header for better page speed results. But this disables source mapping in the inspector which greatly helps with finding where code is in the partial files. To temporarily disable this, go to <strong>functions.php</strong> and uncomment:</p>
+
+<p><code>wp_enqueue_style( 'styles', get_template_directory_uri() . '/style.css', '', 5, 'all' );</code></p>
+
+<p>Then go down a few lines and comment out:</p>
+
+<pre><code>function internal_css_print() {
+   echo '&lt;style&gt;';
+   
+   include_once get_template_directory() . '/style.css';
+  
+   echo '&lt;/style&gt;';
+}
+
+
+add_action( 'wp_head', 'internal_css_print' );
+
+</code></pre>
+
+<p>Future builds will integrate our typical way of handling these files for page speed</p>
+
+<h3 id="svgs">SVGS</h3>
+
+<p>Sometimes svgs won&#8217;t upload in the media library unless this is added to the top of the svg code:</p>
+
+<p><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</code></p>
+
+<h2 id="feedback">Feedback</h2>
+
+<p>Please provide feedback as you use this theme. This can become better and better with more collaboration :100:</p>
+
+</body>
+</html>
+

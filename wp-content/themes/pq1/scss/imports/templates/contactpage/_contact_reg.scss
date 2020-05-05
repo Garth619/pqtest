@@ -1,0 +1,67 @@
+
+
+#contact_reg_top {
+	text-align: center;
+	padding:151px 80px 30px;
+	@include mq(tablet) {
+		padding: 70px 80px 30px;
+	}
+	@include mq(xlarge_mobile) {
+		padding: 70px 40px 30px;
+	}
+	.contact_phone {
+		margin-top:65px;
+	}
+}
+
+#content_reg_bottom {
+	background:$bg_color;
+	padding: 116px 0 98px;
+	@include mq(large_laptop) {
+		padding:80px 0;
+	}
+	@include mq(xlarge_mobile) {
+		padding: 55px 0;
+	}
+}
+
+body.page-template-template-contact {
+	#location_info {
+		margin: 0px auto 0;
+	}
+	.location_col {
+		a.location_phone {
+			color:$contact_location_info_href_color;
+		}
+		a.get_directions {
+			color:$contact_location_info_href_color;
+		}
+		span.location_title {
+			color:$contact_location_info_href_color;
+		}
+		span.address {
+			color:$contact_location_info_href_color;
+		}
+		.location_phone_wrapper {
+			span, a {
+				color:$contact_location_info_href_color;
+			}
+		}
+	}
+	.social_media {
+		a {
+			&:hover {
+				svg.social {
+					path {
+						fill:$contact_page_sm_fill_color_hover;
+					}
+				}
+			}
+			svg.social {
+				path {
+					fill:$contact_page_sm_fill_color;
+				}
+			}
+		}
+	}
+}

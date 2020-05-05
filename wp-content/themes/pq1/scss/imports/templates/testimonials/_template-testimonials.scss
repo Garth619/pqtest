@@ -1,0 +1,265 @@
+
+
+
+.testi_feature {
+	background: $testi_feature_bg_color;
+	color:$testi_feature_text_color;
+	margin: 69px 0 0 0;
+	padding-top: 82px;
+	padding-bottom: 89px;
+	@include mq(large_laptop) {
+		padding-top: 73px;
+		padding-bottom: 73px;
+	}
+	@include mq(tablet) {
+		margin: 60px 0 0 0;
+		padding-top: 63px;
+		padding-bottom:63px;
+	}
+	@include mq(xlarge_mobile) {
+		margin: 40px 0 0 0;
+		padding-top: 42px;
+    padding-bottom: 42px;
+   }
+	.testi_feature_inner {
+		max-width: 910px;
+		margin:0 auto;
+		@include mq(tablet) {
+			max-width:600px;
+		}
+		svg.stars {
+			@include box(190px,33px);
+			polygon {
+				fill:$testi_feature_star_color;
+			}
+		}
+		.testi_intro {
+			margin-top: 29px;
+			@include type((
+				size: $testi_feature_intro_size,
+				height: $testi_feature_intro_line_height,
+				family:$secondaryfont,
+			));
+			@include mq(large_laptop) {
+				@include quick_type($testi_feature_intro_size_large_laptop,$testi_feature_intro_line_height_large_laptop,null);
+			}
+			@include mq(small_laptop) {
+				@include quick_type($testi_feature_intro_size_small_laptop,$testi_feature_intro_line_height_small_laptop,null);
+			}
+			@include mq(xlarge_mobile) {
+				@include quick_type($testi_feature_intro_size_xlarge_mobile,$testi_feature_intro_line_height_xlarge_mobile,null);
+			}
+			p {
+				padding-bottom: 28px;
+				@include mq(xlarge_mobile) {
+					padding-bottom: 18px;
+				}
+			}
+		}
+		.testi_description {
+			margin-top: 18px;
+			@include type((
+				size: $testi_feature_desc_size,
+				height: $testi_feature_desc_line_height,
+				family:$primaryfont,
+			));
+			@include mq(large_laptop) {
+				@include quick_type($testi_feature_desc_size_large_laptop,$testi_feature_desc_line_height_large_laptop,null);
+			}
+			@include mq(tablet) {
+				@include quick_type($testi_feature_desc_size_tablet,$testi_feature_desc_line_height_tablet,null);
+			}
+			p {
+				padding-bottom: 34px;
+			}
+			a.testi_read_more {
+				margin-top: -24px;
+				display: block;
+				transition: all 200ms ease-in-out;
+				@include type((
+					size: $testi_feature_read_more_size,
+					spacing: $testi_feature_read_more_spacing,
+					family:$primaryfont,
+					color:$testi_feature_read_more_color,
+					weight:$testi_feature_read_more_weight,
+					transform:uppercase,
+					style:normal,
+					decoration:none,
+				));
+				&:hover {
+					color:$testi_feature_read_more_color_hover;
+				}
+				@include mq(large_laptop) {
+					font-size: $testi_feature_read_more_size_large_laptop;
+				}
+				@include mq(small_laptop) {
+					font-size: $testi_feature_read_more_size_small_laptop;
+				}
+				@include mq(tablet) {
+					font-size: $testi_feature_read_more_size_tablet;
+				}
+			}
+		}
+		span.testi_name {
+			display: block;
+			margin-top: 17px;
+			@include type((
+				size: $testi_feature_name_size,
+				spacing: $testi_feature_name_spacing,
+				family:$primaryfont,
+				weight:$testi_feature_name_weight,
+				transform:uppercase,
+			));
+			@include mq(large_laptop) {
+				font-size: $testi_feature_name_size_large_laptop;
+			}
+			@include mq(small_laptop) {
+				font-size: $testi_feature_name_size_small_laptop;
+			}
+			@include mq(tablet) {
+				font-size: $testi_feature_name_size_tablet;
+			}
+			&:before {
+				content:"";
+				display: block;
+				background: $accent_color;
+				margin: 0 auto 30px;
+				@include box(108px,3px);
+				@include mq(tablet) {
+					margin: 0px auto 30px;
+				}
+			}
+		}
+	}
+}
+
+
+
+.testi_bottom {
+	max-width:1630px;
+	margin:0 auto -75px;
+	padding-top: 119px;
+	@include flex(space-between);
+	@include mq(small_laptop) {
+		padding-top: 89px;
+		margin-bottom: -140px;
+	}
+	@include mq(tablet) {
+		padding-top: 65px;
+		margin-bottom: -80px;
+		display: block;
+	}
+	@include mq(xlarge_mobile) {
+		padding-top: 50px;
+	}
+	
+	.testi_col {
+		flex-basis:43%;
+		@include mq(small_laptop) {
+			flex-basis: 46%;
+		}
+		.single_testi {
+			text-align: left;
+			margin-bottom: 113px;
+			@include mq(tablet) {
+				text-align: center;
+				margin:0 auto 50px;
+				max-width:600px;
+			}
+			@include mq(xlarge_mobile) {
+				text-align: center;
+			}
+			svg.stars {
+				@include box(190px,33px);
+				polygon {
+					fill:$testi_star_color;
+				}
+			}
+			.testi_intro {
+				margin-top: 36px;
+				@include type((
+					size: $testi_intro_size,
+					height: $testi_intro_line_height,
+					family:$secondaryfont,
+				));
+				@include mq(large_laptop) {
+					@include quick_type($testi_intro_size_large_laptop,$testi_intro_line_height_large_laptop,null);
+				}
+				@include mq(small_laptop) {
+					@include quick_type($testi_intro_size_small_laptop,$testi_intro_line_height_small_laptop,null);
+				}
+				@include mq(tablet) {
+					@include quick_type(23px,29px,null);
+				}
+				p {
+					padding-bottom:25px;
+				}
+			}
+			.testi_description {
+				margin-top: 8px;
+				@include type((
+					size: $testi_desc_size,
+					height: $testi_desc_line_height,
+					family:$primaryfont,
+					weight:$testi_desc_weight,
+				));
+				@include mq(tablet) {
+					@include quick_type($testi_desc_size_tablet,$testi_desc_line_height_tablet,null);
+				}
+				.testi_read_more {
+					margin-top: 10px;
+					margin-bottom: -10px;
+					display: block;
+					transition: all 200ms ease-in-out;
+					@include type((
+						size: $testi_desc_read_more_size,
+						family:$primaryfont,
+						color:$testi_desc_read_more_color,
+						weight:$testi_desc_read_more_weight,
+						transform:uppercase,
+					));
+					&:hover {
+						color:$testi_desc_read_more_color_hover;
+					}
+					@include mq(small_laptop) {
+						font-size: $testi_desc_read_more_size_small_laptop;
+					}
+					@include mq(tablet) {
+						font-size: $testi_desc_read_more_size_tablet;
+					}
+				}
+			}
+			span.testi_name {
+				margin-top: 30px;
+				display: block;
+				@include type((
+					size: $testi_desc_name_size,
+					height:$testi_desc_name_line_height,
+					family:$primaryfont,
+					weight:$testi_desc_name_weight,
+					transform:uppercase,
+				));
+				@include mq(small_laptop) {
+					font-size: $testi_desc_name_size_small_laptop;
+				}
+				@include mq(tablet) {
+					font-size: $testi_desc_name_size_tablet;
+				}
+				&:before {
+					content:"";
+					display: block;
+					background: $accent_color;
+					margin: 0px 0 23px;
+					@include box(108px,3px);
+					@include mq(tablet) {
+						@include margin_lr;
+					}
+					@include mq(xlarge_mobile) {
+						@include margin_lr;
+					}
+				}
+			}
+		}
+	}
+}
+

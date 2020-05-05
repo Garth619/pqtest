@@ -1,0 +1,180 @@
+.sidebar_wrapper {
+	flex-basis: 592px;
+	flex-shrink:0;
+	background: $bg_color;
+	padding: 95px 0px 40px;
+	@include mq(large_laptop) {
+		padding: 70px 0px 0;
+		flex-basis: 422px;
+	}
+	@include mq(small_laptop) {
+		flex-basis: 281px;
+		padding: 75px 0px 0;
+	}
+	@include mq(tablet) {
+		order:2;
+		flex-basis:auto;
+		padding: 55px 0px;
+		margin-top: 15px;
+	}
+	@include mq(xlarge_mobile) {
+		padding: 45px 0px;
+	}
+}
+
+.sidebar_box {
+	h3 {
+		padding: 0 120px 15px;
+		display: inline-block;
+		@include type((
+			size: $sidebar_header_h3_size,
+			spacing: $sidebar_header_h3_spacing,
+			height:  $sidebar_header_h3_line_height,
+			family:$primaryfont,
+			weight:$sidebar_header_h3_line_weight,
+			color:$sidebar_header_h3_color,
+			transform:uppercase,
+		));
+		@include mq(large_laptop) {
+			padding: 0 82px 15px;
+			@include quick_type($sidebar_header_h3_size_large_laptop,$sidebar_header_h3_line_height_large_laptop,null);
+		}
+		@include mq(small_laptop) {
+			padding: 0 44px 23px;
+			@include quick_type($sidebar_header_h3_size_small_laptop,$sidebar_header_h3_line_height_small_laptop,null);
+		}
+		@include mq(tablet) {
+			padding: 0 109px 17px;
+		}
+		@include mq(xlarge_mobile) {
+			padding:0 40px 14px;
+		}
+	}
+	ul {
+		list-style: none;
+		li {
+			@include type((
+				size: $sidebar_list_size,
+				height: $sidebar_list_line_height,
+				family:$secondaryfont,
+				transform:lowercase,
+			));
+			@include mq(large_laptop) {
+				@include quick_type($sidebar_list_size_large_laptop, $sidebar_list_line_height_large_laptop, null);
+			}
+			@include mq(small_laptop) {
+				@include quick_type($sidebar_list_size_small_laptop,$sidebar_list_line_height_small_laptop,null);
+			}
+			a {
+				color:$sidebar_list_color;
+				text-decoration: none;
+				display: block;
+				margin-bottom: 21px;
+				padding:0 140px 0 120px;
+				transition: all 200ms ease-in-out;
+				&:hover {
+					color:$sidebar_list_color_hover;
+				}
+				@include mq(large_laptop) {
+					margin-bottom:9px;
+					padding: 0 152px 15px 82px;
+				}
+				
+				@include mq(small_laptop) {
+					padding: 0 90px 0 44px;
+					margin-bottom: 22px;
+				}
+				@include mq(tablet) {
+					padding:0 109px;
+					max-width: 402px;
+					margin-bottom: 19px;
+				}
+				@include mq(xlarge_mobile) {
+					padding:0 40px;
+					margin-bottom: 20px;
+					max-width: 272px;
+				}
+				
+			}
+		}
+		> li.active {
+				> a {
+					color:$sidebar_active_list_color;
+				}
+		}
+		> li.current-menu-item {
+			 >a {
+				 color:$sidebar_current_list_color;
+			 }
+		}
+		> li.menu-item-has-children {
+			> a {
+					position: relative;
+					@include mq(xlarge_mobile) {
+						padding: 0 58px 0 40px;
+					}
+					&:after {
+						transition: all 200ms ease-in-out;
+						@include abs(8px,122px);
+						@include tri(down,4px,8px,$sidebar_list_tri_color)
+						@include box(0);
+						@include mq(small_laptop) {
+							right: 62px;
+							top:6px;
+						}
+						@include mq(xlarge_mobile) {
+							right: 42px
+						}
+					}
+				}
+				> a.active {
+					color:$sidebar_active_list_parent_color;
+					&:after {
+						border-top-color:$sidebar_active_list_parent_tri_color;
+					}
+				}
+			}
+			> li.current-menu-ancestor {
+				> a {
+					color:$sidebar_current_list_parent_color;
+					&:after {
+						border-top-color:$sidebar_current_list_parent_tri_color;
+					}
+				}
+				> ul.sub-menu {
+					display: block;
+				}
+			}
+		}
+		ul.sub-menu {
+			background: $sidebar_submenu_bg_color;
+			border-top:3px solid $sidebar_submenu_bordertop_color;
+			padding: 36px 0 27px;
+			margin-top: 30px;
+			margin-bottom: 28px;
+			display: none;
+			@include mq(large_laptop) {
+				margin-top: 18px;
+				padding: 31px 0 12px;
+			}
+			@include mq(small_laptop) {
+				margin-bottom: 20px;
+				padding: 31px 0 25px;
+			}
+			@include mq(tablet) {
+				padding: 35px 0;
+			}
+			@include mq(xlarge_mobile) {
+				padding: 30px 0;
+				margin-bottom: 26px;
+			}
+			> li {
+					&:last-of-type {
+						a {
+							margin-bottom: 5px;
+						}
+					}
+			}
+		}
+	}
+	

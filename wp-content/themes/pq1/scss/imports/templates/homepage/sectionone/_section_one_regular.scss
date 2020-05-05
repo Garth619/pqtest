@@ -1,0 +1,52 @@
+
+
+.sec_one_reg_inner {
+	position: relative;
+	z-index: 1;
+	max-width: 1500px;
+	margin:0 auto;
+	@include flex(flex-end);
+	@include mq(small_tablet) {
+		display: block;
+	}
+}
+
+.sec_one_reg_right {
+	flex-basis: 810px;
+	padding:171px 0 0 0;
+	@include mq(large_monitor) {
+		flex-basis: 675px;
+		padding: 115px 0 0 0;
+	}
+	@include mq(small_laptop) {
+		text-align: center;
+		flex-basis: 575px;
+		padding: 125px 0 0 0;
+	}
+	@include mq(tablet) {
+		flex-basis: 515px;
+	}
+	@include mq(small_tablet) {
+		max-width: 560px;
+		@include flex(null,null,column);
+		@include margin_lr;
+	}
+	@include mq(xlarge_mobile) {
+		padding: 65px 0 0 0;
+		max-width: 370px;
+		ul.sec_one_selling_points {
+			display: block;
+		}
+	}
+	span.sec_one_title {
+		&:after {
+			@include mq(xlarge_mobile) {
+				content:"";
+				display: block;
+				background: $accent_color;
+				margin:20px auto 25px;
+				@include box(60px,4px);
+			}
+		}
+	}
+}

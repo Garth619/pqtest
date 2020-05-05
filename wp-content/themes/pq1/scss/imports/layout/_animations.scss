@@ -1,0 +1,290 @@
+@media screen and (min-width: 1199px) {
+	
+	
+	// vars and mixins
+	
+	$transition: transform 1200ms cubic-bezier(.17,.66,.34,.98), opacity 500ms linear;
+	$transition_two: transform 1200ms cubic-bezier(.17,.66,.34,.98);
+	
+	@mixin transform_opacity {
+		transform: translateY(-25px);
+		opacity: 0;
+		transition: $transition;
+	}
+	
+	@mixin fire_transform_opacity($delay) {
+		transform: translateY(0px);
+		opacity: 1;
+		transition-delay:$delay, $delay;
+	}
+	
+	@mixin line_animation {
+		transform: scale(0,1);
+		transform-origin: center center;
+		transition: $transition_two;
+	}
+	
+	@mixin line_animation_left {
+		transform: scale(0,1);
+		transform-origin: top left;
+		transition: $transition_two;
+	}
+	
+	@mixin img_scale($scale) {
+		transform: scale($scale,$scale);
+		transition: $transition_two;
+	}
+	
+	@mixin fire_return_scale($scale, $delay: 0ms) {
+		transform: scale($scale,$scale);
+		transition-delay:$delay,$delay;
+	}
+	
+	// section one
+	
+	.sec_one_video {
+		@include transform_opacity;
+	}
+	
+	.sec_one_awards_slider {
+		@include transform_opacity;
+	}
+	
+	span.featured_on {
+		@include transform_opacity;
+	}
+	
+	body.ready {
+		.sec_one_video {
+			@include fire_transform_opacity(300ms);
+		}
+		.sec_one_awards_slider {
+			@include fire_transform_opacity(600ms);
+		}
+		span.featured_on {
+			@include fire_transform_opacity(900ms);
+		}
+	}
+	
+	
+
+		ul.sec_one_selling_points {
+			@include transform_opacity;
+		}
+	
+	
+	span.sec_one_title {
+		@include transform_opacity;
+	}
+	
+	a.free_consultation_button {
+		@include transform_opacity;
+		transition: $transition, background 300ms linear;
+	}
+
+	
+	
+	body.ready {
+	
+			ul.sec_one_selling_points {
+				@include fire_transform_opacity(400ms);
+			}
+		
+		span.sec_one_title {
+			@include fire_transform_opacity(700ms);
+		}
+		a.free_consultation_button {
+			@include fire_transform_opacity(1000ms);
+			transition-delay: 1000ms, 1000ms, 0ms;
+		}
+	}
+	
+	
+	img#hero_img {
+		@include img_scale(1.2);
+	}
+	
+	body.ready {
+		img#hero_img {
+			@include fire_return_scale(1,300ms);
+		}
+	}
+	
+	// section three
+	
+	h1#sec_three_header {
+		&:before {
+			@include line_animation;
+		}
+	}
+	
+	
+	#section_three.visible {
+		h1#sec_three_header {
+			&:before {
+				@include fire_return_scale(1);
+			}
+		}
+	}
+	
+	#sec_three_left_trigger {
+		transform: translateY(-55px);
+		transition: $transition_two;
+		img {
+			@include img_scale(1.15);
+		}
+	}
+	
+	
+	#sec_three_left_trigger.visible {
+		transform: translateY(0);
+		img {
+			@include fire_return_scale(1);
+		}
+	}
+	
+	
+	// section four
+	
+	span.testi_title {
+		&:after {
+			@include line_animation;
+		}
+	}
+	
+	.testimonial_bg_inner {
+		img {
+			@include img_scale(1.15);
+		}
+	}
+	
+	#section_four.visible {
+		span.testi_title {
+			&:after {
+				@include fire_return_scale(1);
+			}
+		}
+		.testimonial_bg_inner {
+			img {
+				@include fire_return_scale(1);
+			}
+		}
+	}
+	
+	// section six
+	
+	.sec_six_left {
+		.sec_six_left_inner {
+			span {
+				&:before {
+					@include line_animation;
+				}
+			}
+		}
+	}
+	
+	.sec_six_left {
+		img {
+			@include img_scale(1.15);
+		}
+	}
+	
+	
+	#section_six.visible {
+		.sec_six_left {
+			img {
+				@include fire_return_scale(1);
+			}
+		}
+		.sec_six_left_inner {
+			span {
+				&:before {
+					@include fire_return_scale(1);
+				}
+			}
+		}
+	}
+	
+	// about page
+	
+	h1.about_header {
+		&:before {
+			@include line_animation_left;
+		}
+	}
+	
+	
+	.about_img_wrapper {
+		img {
+			@include img_scale(1.15);
+		}
+	}
+	
+	
+	body.ready {
+		h1.about_header {
+			&:before {
+				@include fire_return_scale(1, 100ms);
+			}
+		}
+		.about_img_wrapper {
+			img {
+				@include fire_return_scale(1, 100ms);
+			}
+		}
+	}
+	
+	
+	// att bio
+	
+	
+	.att_bio_image {
+		img {
+			@include img_scale(1.15);
+		}
+	}
+	
+	
+	body.ready {
+		.att_bio_image {
+			img {
+				@include fire_return_scale(1, 100ms);
+			}
+		}
+	}
+	
+	
+	// internal banner
+	
+	
+	img#internal_hero {
+		@include img_scale(1.15);
+	}
+	
+	
+	body.ready {
+		img#internal_hero {
+			@include fire_return_scale(1, 100ms);
+		}
+	}
+	
+	// internal headers
+	
+	
+	h1.internal_header {
+		&:before {
+			@include line_animation;
+		}
+	}
+	
+	
+	body.ready {
+		h1.internal_header {
+			&:before {
+				@include fire_return_scale(1, 100ms);
+			}
+		}
+	}
+
+	
+} /* Media Query */

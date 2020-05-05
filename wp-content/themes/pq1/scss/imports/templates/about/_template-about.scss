@@ -1,0 +1,223 @@
+
+
+#about_top {
+	width:100%;
+	background: $bg_color;
+	padding:0 80px;
+	@include mq(internal_xlarge_monitor) {
+		padding:0 80px;
+	}
+	@include mq(tablet) {
+		padding-bottom: 35px;
+	}
+	@include mq(xlarge_mobile) {
+		padding:0 40px 10px;
+	}
+}
+
+.about_top_inner {
+	max-width: 1540px;
+	margin:0 auto;
+	padding: 158px 0px 0 0;
+	@include flex(space-between);
+	@include mq(internal_xlarge_monitor) {
+		padding: 200px 0px 0;
+		max-width: 1430px;
+	}
+	@include mq(large_laptop) {
+		padding: 150px 0px 0;
+	}
+	@include mq(tablet) {
+		padding: 70px 0px 0;
+		display: block;
+	}
+	@include mq(xlarge_mobile) {
+		padding: 57px 0px 0;
+	}
+	
+}
+
+.about_top_left {
+	padding-bottom: 85px;
+	padding-left:20px;
+	padding-right: 6%;
+	@include mq(internal_xlarge_monitor) {
+		padding-left:0;
+	}
+	@include mq(small_laptop) {
+		padding-bottom: 45px;
+	}
+	
+	@include mq(tablet) {
+		padding-right:0;
+		padding-bottom:0;
+	}
+}
+
+.about_inner_left {
+	max-width: 815px;
+	@include mq(tablet) {
+		max-width: 100%;
+	}
+	p {
+		margin-bottom: 30px;
+	}
+}
+
+
+
+h1.about_header {
+	padding:0;
+	max-width: 584px;
+	padding-bottom: 32px;
+	@include type((
+		size:$about_header_size,
+		height: $about_header_line_height,
+		family:$secondaryfont,
+		align:left,
+	));
+	@include mq(large_laptop) {
+		display: inline-block;
+		line-height: $about_header_line_height_large_laptop;
+	}
+	@include mq(small_laptop) {
+		max-width: 100%;
+		display: inline-block;
+    @include quick_type($about_header_size_small_laptop,$about_header_line_height_small_laptop,null);
+	}
+	@include mq(tablet) {
+		 @include quick_type($about_header_size_tablet,$about_header_line_height_tablet,null);
+	}
+	
+	@include mq(xlarge_mobile) {
+		padding-bottom: 25px;
+    @include quick_type($about_header_xlarge_mobile,$about_header_line_height_xlarge_mobile,null);
+	}
+	&:before {
+		content:"";
+		display: block;
+		background: $accent_color;
+		margin-bottom: 25px;
+		@include box(100%,5px);
+	}
+}
+
+
+.about_left_intro {
+	max-width: 770px;
+	@include type((
+		size: $about_intro_size,
+		height: $about_intro_line_height,
+		family:$primaryfont,
+		weight:$about_intro_weight,
+		color:$about_intro_color,
+	));
+	@include mq(large_laptop) {
+		@include quick_type($about_intro_size_large_laptop,$about_intro_line_height_large_laptop,null);
+	}
+	@include mq(small_laptop) {
+    @include quick_type($about_intro_size_small_laptop,$about_intro_line_height_small_laptop,null);
+	}
+	@include mq(tablet) {
+		max-width: 100%;
+	}
+	
+}
+
+
+.about_top_right {
+	flex-basis:575px;
+	flex-shrink:0;
+	position: relative;
+	margin-top: 18px;
+	@include mq(large_laptop) {
+		flex-basis: 475px;
+	}
+	@include mq(xsmall_laptop) {
+		flex-basis: 430px;
+	}
+	@include mq(tablet) {
+		display: none;
+	}
+}
+
+
+
+.about_img_wrapper {
+	@include abs(0,null,null,0);
+	@include mq(xsmall_laptop) {
+		position: static;
+		margin-bottom: 65px;
+	}
+	div {
+		overflow: hidden;
+		margin-bottom:20px;
+	}
+	img {
+		@include image();
+	}
+}
+
+#about_bottom {
+	padding:0 80px;
+	@include mq(xlarge_mobile) {
+		padding: 0 40px;
+	}
+}
+
+
+.about_bottom_inner {
+	max-width: 1060px;
+	margin:0 auto;
+	padding: 170px 0px 130px 0;
+	@include mq(large_laptop) {
+		padding: 90px 0px 130px 0;
+	}
+	@include mq(small_laptop) {
+		padding: 75px 0px 90px 0;
+	}
+	@include mq(tablet) {
+		padding: 60px 0px;
+	}
+	@include mq(xlarge_mobile) {
+		padding: 40px 0px;
+	}
+	
+	&.content {
+		h3 {
+			padding-bottom:20px;
+		}
+		blockquote {
+			text-align: center;
+			margin:70px auto 55px;
+			max-width: 820px;
+			padding:0;
+			border:none;
+			display: block;
+			@include quick_type($about_blockquote_size, $about_blockquote_line_height,null);
+			@include mq(large_laptop) {
+				max-width: 680px;
+				@include quick_type($about_blockquote_size_large_laptop, $about_blockquote_line_height_large_laptop,null);
+			}
+			@include mq(small_laptop) {
+				max-width: 690px;
+				@include quick_type($about_blockquote_size_small_laptop, $about_blockquote_line_height_small_laptop,null);
+			}
+			@include mq(xlarge_mobile) {
+				line-height: $about_blockquote_line_height_xlarge_mobile;
+				margin: 52px auto 47px;
+			}
+			&:before {
+				content:"";
+				display: block;
+				position: static;
+				background: $accent_color;
+				margin:0 auto 33px;
+				@include box(354px,5px);
+			}
+		}
+	}
+}
+
+
+

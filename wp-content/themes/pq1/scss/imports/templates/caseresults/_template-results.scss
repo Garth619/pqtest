@@ -1,0 +1,192 @@
+
+
+body.page-template-template-caseresults {
+	.internal_container {
+		padding-bottom: 0;
+	}
+}
+
+.case_results_wrapper {
+	margin-bottom:-20px;
+	@include mq(tablet) {
+		margin-bottom: 0px;
+	}
+	@include mq(xsmall_tablet) {
+		margin-top: 45px;
+		//margin-bottom:-50px;
+	}
+	@include mq(xlarge_mobile) {
+		margin-top:0px;
+		padding: 55px 0 0;
+	}
+}
+
+
+.cr_row {
+	padding: 73px 0px;
+	@include mq(large_laptop) {
+		padding: 90px 0px;
+	}
+	@include mq(small_laptop) {
+		padding: 70px 0px;
+	}
+	
+	@include mq(xsmall_tablet) {
+		padding:0;
+	}
+	&:nth-of-type(2n + 2) {
+		background: $bg_color;
+		@include mq(xsmall_tablet) {
+			background: $cr_row_bg_color_xlarge_mobile;
+		}
+	}
+	&:first-of-type {
+		.single_cr {
+			&:first-of-type {
+				padding-top:0;
+			}
+		}
+	}
+	&:last-of-type {
+		padding-bottom:150px;
+		@include mq(tablet) {
+			padding-bottom:90px;
+		}
+		@include mq(xsmall_tablet) {
+			padding-bottom:0;
+		}
+	}
+	.cr_inner_row {
+		max-width: 1667px;
+		margin:0 auto;
+		padding-left:80px;
+		padding-right:80px;
+		@include flex(space-between,null,null,wrap);
+		@include mq(tablet) {
+			max-width: 960px;
+		}
+		@include mq(xsmall_tablet) {
+			display: block;
+			padding-left:0px;
+			padding-right:0px;
+		}
+		&:after {
+			content:"";
+			display: block;
+			flex-basis:30%;
+			@include mq(tablet) {
+				display: none;
+			}
+		}
+		.single_cr {
+			flex-basis:30%;
+			flex-shrink:0;
+			@include mq(tablet) {
+				flex-basis: 47%;
+			}
+			@include mq(xsmall_tablet) {
+				padding: 50px 40px;
+				@include margin_lr;
+			}
+			
+			&:nth-of-type(2n + 2) {
+				@include mq(xsmall_tablet) {
+					background:$bg_color;
+				}
+			}
+			span {
+				display: block;
+			}
+			span.cr_amount {
+				@include type((
+					size: $cr_amount_size,
+					family:$secondaryfont,
+					color:$cr_amount_color,
+				));
+				@include mq(large_laptop) {
+					font-size: $cr_amount_size_large_laptop;
+				}
+				@include mq(small_laptop) {
+					font-size: $cr_amount_size_small_laptop;
+				}
+				@include mq(xlarge_mobile) {
+					font-size: $cr_amount_size_xlarge_mobile;
+				}
+				&:after {
+					content:"";
+					display: block;
+					margin: 27px auto 35px;
+					background: $accent_color;
+					@include box(65px,3px);
+				}
+			}
+			span.cr_type {
+				max-width: 350px;
+				@include margin_lr;
+				@include type((
+					size: $cr_type_size,
+					height: $cr_type_line_height,
+					family:$primaryfont,
+					weight:$cr_type_weight,
+					transform:uppercase,
+				));
+				@include mq(large_laptop) {
+					max-width: 290px;
+					@include quick_type($cr_type_size_large_laptop, $cr_type_line_height_large_laptop, null);
+				}
+				@include mq(small_laptop) {
+					@include quick_type($cr_type_size_small_laptop, $cr_type_line_height_small_laptop, null);
+				}
+				@include mq(xsmall_tablet) {
+					@include quick_type($cr_amount_size_xsmall_tablet, $cr_type_line_height_xsmall_tablet,null);
+					max-width: 470px;
+					@include margin_lr;
+				}
+				@include mq(xlarge_mobile) {
+					max-width: 290px;
+				}
+			}
+			span.cr_description {
+				display: block;
+				max-width: 425px;
+				margin:15px auto 0;
+				@include type((
+					size: $cr_description_size,
+					height: $cr_decription_line_height,
+					family:$primaryfont,
+					color:$cr_description_color,
+					weight:$cr_description_weight,
+				));
+				@include mq(large_laptop) {
+					@include quick_type($cr_description_size_large_laptop,$cr_decription_line_height_large_laptop,null);
+				}
+			}
+			a.cr_read_more {
+				display: inline-block;
+				margin-top: 18px;
+				transition: all 200ms ease-in-out;
+				@include type((
+					size: cr_read_more_size,
+					family:$primaryfont,
+					color:$cr_read_more_color,
+					weight:$cr_read_more_weight,
+					transform:uppercase,
+				));
+				&:hover {
+					color:$cr_read_more_color_hover;
+				}
+				@include mq(large_laptop) {
+					font-size: $cr_read_more_size_xlarge_mobile;
+				}
+			}
+		}
+	}
+}
+
+
+.sidebar_box.sidebar_case_results {
+	margin-bottom:65px;
+	@include mq(xlarge_mobile) {
+		margin-bottom:35px;
+	}
+}

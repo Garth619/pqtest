@@ -1,0 +1,21 @@
+
+.not_found {
+	text-align: center;
+}
+
+span.error {
+	display: block;
+	margin: 73px 0 0;
+	@include type((
+		size: $not_found_error_size,
+		family:$primaryfont,
+		color:$not_found_error_color,
+		weight:$not_found_error_weight,
+		transform:uppercase,
+	));
+}
+
+.not_found_content {
+	max-width:750px;
+	margin:30px auto 0;
+}

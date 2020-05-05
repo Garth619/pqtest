@@ -1,0 +1,173 @@
+body {
+	color:$body_color;
+}
+
+
+#internal_main {
+	width:100%;
+	@include mq(tablet) {
+		margin-top: 75px; // value will need to change based on double bar now
+	}
+	@include mq(xlarge_mobile) {
+		margin-top: 143px;
+	}
+} 
+
+.internal_container {
+	padding: 130px 0px;
+	text-align: center;
+	@include mq(tablet) {
+		padding: 70px 0px 90px;
+	}
+	@include mq(xlarge_mobile) {
+		padding: 64px 0px 90px;
+	}
+}
+
+.inner_container {
+	padding-left: 80px;
+	padding-right: 80px;
+	@include mq(xlarge_mobile) {
+		padding-left:40px;
+		padding-right:40px;
+	}
+}
+
+.page_container {
+	display: flex;
+	@include mq(tablet) {
+		flex-direction: column;
+	}
+}
+
+
+h1.internal_header {
+	display: inline-block;
+	margin:0 auto;
+	padding-left:40px;
+	padding-right:40px;
+	@include type((
+		size: $internal_header_size,
+		height: $internal_header_line_height,
+		family:$secondaryfont,
+		align:center,
+		transform:null,
+	));
+	@include mq(large_laptop) {
+		@include quick_type($internal_header_size_large_laptop,$internal_header_line_height_large_laptop,null);
+	}
+	@include mq(xlarge_mobile) {
+		padding-left: 0;
+		padding-right: 0;
+		@include quick_type($internal_header_size_xlarge_mobile,$internal_header_line_height_xlarge_mobile,null);
+	}
+	&:before {
+		content:"";
+		display: block;
+		background: $accent_color;
+		margin:0 auto 27px;
+		@include box(100%,5px);
+	}
+}
+
+
+.page_content {
+	flex-grow: 1;
+	padding: 80px 13% 140px 8%;
+	@include mq(large_monitor) {
+		padding: 64px 160px 100px 5%;
+	}
+	@include mq(small_laptop) {
+		padding: 64px 128px 100px 10%;
+	}
+	@include mq(tablet) {
+		order:1;
+		padding: 80px 80px 38px;
+	}
+	@include mq(xlarge_mobile) {
+		padding: 45px 40px 11px;
+	}
+}
+
+
+.widget {
+	margin-bottom: 55px;
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+	@include mq(tablet) {
+		margin-bottom:55px;
+	}
+}
+
+span.content_color {
+	color:$span_color;
+}
+
+.alignleft,
+img.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 24px;
+	margin-top: 4px;
+	@include mq(xlarge_mobile) {
+		margin:4px auto 0px;
+		float:none;
+		max-width:100%;
+		height:auto;
+	}
+}
+.alignright,
+img.alignright {
+	display: inline;
+	float: right;
+	margin-left: 24px;
+	margin-top: 4px;
+	@include mq(xlarge_mobile) {
+		margin:4px auto 0px;
+		float:none;
+		max-width:100%;
+		height:auto;
+	}
+}
+.aligncenter,
+img.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	@include mq(xlarge_mobile) {
+		margin:4px auto 0px;
+		float:none;
+		max-width:100%;
+		height:auto;
+	}
+}
+img.alignleft,
+img.alignright,
+img.aligncenter {
+	margin-bottom: 12px;
+	max-width:100%;
+	height:auto;
+	@include mq(xlarge_mobile) {
+		margin:4px auto 0px;
+		float:none;
+		max-width:100%;
+		height:auto;
+	}
+}
+
+
+.gform_wrapper ul li ::-webkit-input-placeholder {
+  color: $form_input_placeholder_color; }
+.gform_wrapper ul li ::-moz-placeholder {
+  color: $form_input_placeholder_color; }
+ .gform_wrapper ul li :-moz-placeholder {
+   color: $form_input_placeholder_color; }
+ .gform_wrapper ul li :-ms-input-placeholder {
+   color: $form_input_placeholder_color; }
+ .gform_wrapper ul li ::-moz-placeholder {
+    opacity: 1; }
+    
+    
+   

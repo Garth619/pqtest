@@ -1,0 +1,338 @@
+
+header {
+	position: relative;
+	z-index:5;
+	margin-bottom: -83px;
+	@include mq(large_laptop) {
+		margin-bottom: -70px;
+	}
+	@include mq(small_laptop) {
+		margin-bottom: -65px;
+	}
+	@include mq(tablet) {
+		width:100%;
+		@include fixed(0,null,null,0);
+	}
+}
+
+
+.header_top {
+	width:100%;
+	padding: 18px 37px;
+	background: $header_top_bg_color;
+	position: relative;
+	z-index: 1;
+	box-shadow: 0px 4px 19.95px 1.05px rgba(0, 0, 0, 0.18);
+	@include mq(large_laptop) {
+		padding: 17px 30px;
+	}
+	@include mq(small_laptop) {
+		padding: 10px 31px;
+	}
+	@include mq(tablet) {
+		padding: 0px 0px 0px 20px;
+    box-shadow: 0px 4px 19.95px 1.05px rgba(0, 0, 0, 0.18);
+	}
+	@include mq(xlarge_mobile) {
+		padding: 0px 0px 0px 13px;
+	}
+	
+}
+
+.header_top_inner {
+	max-width: 1920px;
+	@include flex(space-between,center);
+	@include margin_lr;
+}
+
+
+.header_left {
+	a {
+		img {
+			@include image(250px);
+			@include mq(large_laptop) {
+				max-width: 190px;
+			}
+			@include mq(small_laptop) {
+				max-width: 170px;
+			}
+			@include mq(tablet) {
+				max-width: 190px;
+			}
+			@include mq(xlarge_mobile) {
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+
+
+
+.header_right {
+	background: $header_right_bg_color;
+	@include flex();
+	@include mq(tablet) {
+		flex-grow:1;
+		justify-content: flex-end;
+	}
+}
+
+
+.free_consultation {
+	margin-right: 5px;
+	margin-top: 6px;
+	@include mq(large_laptop) {
+		margin-right: 0px;
+	}
+	@include mq(tablet) {
+		order:1;
+		margin:5px 0px;
+	}
+	@include mq(xlarge_mobile) {
+		margin: 2px 0;
+	}
+}
+
+
+
+
+
+.free_consultaton_phone {
+	display: flex;
+	align-items: center;
+	@include flex(null,center);
+	@include mq(tablet) {
+		@include flex(center,flex-end,column);
+		margin-right:15px;
+	}
+	@include mq(xlarge_mobile) {
+		margin-right: 10px;
+	}
+	span {
+		@include type((
+			size: $free_consultaton_phone_span_size,
+			spacing: $free_consultaton_phone_span_spacing,
+			family:$secondaryfont,
+			color:$free_consultaton_phone_span_color,
+			weight:$free_consultaton_phone_span_weight,
+		));
+		&:last-of-type {
+			&:after {
+				//display: none;
+			}
+		}
+		@include mq(large_laptop) {
+			font-size:$free_consultaton_phone_span_size_large_laptop;
+		}
+		@include mq(small_laptop) {
+			@include quick_type($free_consultaton_phone_span_size_small_laptop, null,null);
+		}
+		@include mq(tablet) {
+			flex-direction: column;
+			align-items: flex-end;
+			justify-content: center;
+			font-size:$free_consultaton_phone_span_size_small_laptop;
+			&:first-of-type {
+				&:after {
+					
+				}
+			}
+			&:last-of-type {
+				&:after {
+					display: none;
+				}
+			}
+		}
+		@include mq(xlarge_mobile) {
+			@include type((
+				size: $free_consultaton_phone_span_size_xlarge_mobile,
+				spacing: $free_consultaton_phone_span_spacing_xlarge_mobile,
+			));
+			strong {
+				display: none;
+			}
+		}
+		@include mq(xsmall_mobile) {
+			&:first-of-type {
+				display: none;
+			}
+		}
+		&:after {
+			content:"";
+			display: inline-block;
+			margin: 0 12px;
+			border-radius: 50%;
+			position: relative;
+			top:-3px;
+			background:$free_consultaton_phone_span_bullet_color;
+			@include box(7px);
+			@include mq(large_laptop) {
+				margin: 0 9px;
+			}
+			@include mq(small_laptop) {
+				margin: 0 11px;
+				top:-1px;
+			}
+			@include mq(tablet) {
+				margin: 0 3px 0 4px;
+				@include box(7px);
+			}
+			@include mq(xlarge_mobile) {
+				margin: 0 1px 0 5px;
+				position: relative;
+				top:-2px;
+				@include box(6px);
+			}
+		}
+		strong {
+			font-weight: $free_consultaton_phone_span_weight;
+		}
+	}
+	a.phone {
+		margin-left: 0px;
+		@include type((
+			size: $free_consultaton_phone_href_size,
+			family:$primaryfont,
+			color:$free_consultaton_phone_ahref_color,
+			weight:$free_consultaton_phone_href_weight,
+		));
+		@include mq(large_laptop) {
+			font-size:$free_consultaton_phone_href_size_large_laptop;
+		}
+		@include mq(small_laptop) {
+			font-size: $free_consultaton_phone_href_size_small_laptop;
+			margin-left: 3px;
+		}
+		@include mq(tablet) {
+			font-size: $free_consultaton_phone_href_size_tablet;
+			order:2;
+			margin:0;
+		}
+		@include mq(xlarge_mobile) {
+			font-size: $free_consultaton_phone_href_size_xlarge_mobile;
+			margin-right: 0;
+			margin-bottom: 0px;
+		}
+		@include mq(xsmall_mobile) {
+			font-size: $free_consultaton_phone_href_size_xsmall_mobile;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+.header_bottom {
+	width:100%;
+	padding: 34px 40px 0;
+	@include mq(min_width_tablet) {
+		display: block !important;
+	}
+	@include mq(large_laptop) {
+		padding: 21px 40px 0;
+		top: 74px;
+	}
+	@include mq(small_laptop) {
+		padding: 21px 40px 0;
+		top: 56px;
+	}
+	@include mq(tablet) {
+		background: $color_lite_two;
+		padding: 27px 0px 0;
+		overflow-x: hidden;
+		overflow-y:scroll;
+		-webkit-overflow-scrolling: touch;
+		display: none;
+		@include fixed(75px,null,null,0);
+		@include box(100%,100vh);
+	}
+}
+
+
+.header_bottom_inner {
+	width:100%;
+	max-width: 1920px;
+	@include flex(flex-end);
+	@include margin_lr;
+	@include mq(small_laptop) {
+		justify-content: center;
+	}
+}
+
+
+
+
+// mobile double bar styles
+
+.mobile_logo {
+	display: none;
+	@include mq(xlarge_mobile) {
+		display: block;
+	}
+	a {
+		padding:13px 10px;
+		display: block;
+		text-align: center;
+		background: $mobile_top_bar_bg_color;
+		img {
+			width: 100%;
+			@include image(203px,auto,inline-block);
+		}
+	}
+}
+
+header.double_bar {
+	@include mq(xlarge_mobile) {
+		position: absolute;
+	}
+	.header_left {
+		display: block;
+		@include mq(xlarge_mobile) {
+			display: none;
+		}
+	}
+	.header_right {
+		.free_consultaton_phone {
+			span {
+				@include mq(xlarge_mobile) {
+					font-size: $free_consultaton_phone_span_size_xlarge_mobile + 2;
+				}
+			}
+		}
+		.free_consultaton_phone {
+			a.phone {
+				@include mq(xlarge_mobile) {
+					margin-top:3px;
+					font-size: $free_consultaton_phone_href_size_xsmall_mobile + 8;
+				}
+			}
+		}
+	}
+	.header_bottom {
+		@include mq(xlarge_mobile) {
+			top:143px;
+			position: absolute;
+		}
+	}
+}
+
+
+header.double_bar.visible {
+	.header_right {
+		@include mq(xlarge_mobile) {
+			width:100%;
+			box-shadow: 0px 4px 19.95px 1.05px rgba(0,0,0,0.18);
+			@include fixed(0,null,null,0);
+		}
+	}
+	.header_bottom {
+		@include mq(xlarge_mobile) {
+		@include fixed(71px,null,null,0);
+		}
+	}
+}

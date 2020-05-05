@@ -1,0 +1,172 @@
+
+#section_two {
+	background: $sec_two_bg_color;
+}
+
+.sec_two_inner {
+	max-width:1930px;
+	@include margin_lr;
+}
+
+
+#sec_two_cr {
+	display: flex;
+}
+
+.sec_two_cr_single {
+	background: transparent;
+	text-align: center;
+	flex-basis: 25%;
+	padding: 85px 30px 155px;
+	transition: all 200ms ease-in-out;
+	&:hover {
+		background: $sec_two_bg_color_hover;
+	}
+	@include mq(large_laptop) {
+		padding: 52px 30px 80px;
+	}
+	@include mq(small_laptop) {
+		padding: 35px 20px 81px;
+	}
+	@include mq(small_tablet) {
+		padding: 46px 30px 42px;
+		&:hover {
+			background: transparent;
+		}
+	}
+	@include mq(xlarge_mobile) {
+		padding: 42px 30px 68px;
+	}
+	img, span {
+		display: block;
+	}
+	img { // make sure to get these svgs from designers as sqaure prportional artboards fromm illustrator, Otherwise they will be ineven and no need to tweak each separately in css if we dont have too
+		margin:0 auto;
+		@include box(85px);
+		@include mq(large_laptop) {
+			@include box(79px);
+		}
+		@include mq(xsmall_laptop) {
+			@include box(63px);
+		}
+		@include mq(small_tablet) {
+			@include box(75px);
+		}
+	}
+	span.cr_amount {
+		margin: 20px auto 0;
+		max-width: 290px;
+		@include type((
+			size: $sec_two_title_size,
+			height:normal,
+			family:$primaryfont,
+			color:$sec_two_title_color,
+			weight:$sec_two_title_weight,
+		));
+		@include mq(large_laptop) {
+			margin-top: 13px;
+			max-width: 230px;
+			font-size: $sec_two_title_size_large_laptop;
+		}
+		@include mq(small_laptop) {
+			margin-top: 20px;
+			max-width: 210px;
+			font-size: $sec_two_title_size_small_laptop;
+		}
+		@include mq(small_tablet) {
+			margin-top: 23px;
+			font-size: $sec_two_title_size_small_tablet;
+		}
+		@include mq(xlarge_mobile) {
+			margin-top: 30px;
+			max-width: 100%;
+		}
+		&:after {
+			content:"";
+			display: block;
+		  margin: 36px auto 0;
+			background: $accent_color;
+			@include box(135px,4px);
+			@include mq(large_laptop) {
+				margin: 16px auto 0;
+			}
+			@include mq(small_laptop) {
+				width:60px;
+				margin: 19px auto 0;
+			}
+			@include mq(small_tablet) {
+				height:4px;
+				margin: 16px auto 0;
+			}
+		}
+	}
+	span.cr_type {
+		margin: 38px auto 0;
+		@include type((
+			size: $sec_two_content_size,
+			spacing: $sec_two_content_spacing,
+			height:$sec_two_content_line_height,
+			family:$secondaryfont,
+			color:$sec_two_content_color,
+			transform:lowercase,
+			weight:$sec_two_content_weight,
+		));
+		@include mq(large_laptop) {
+			margin: 32px auto 0;
+			@include quick_type($sec_two_content_size_large_laptop, $sec_two_content_line_height,null);
+		}
+		@include mq(small_laptop) {
+			margin: 21px auto 0;
+			@include quick_type($sec_two_content_size_small_laptop,$sec_two_content_line_height_small_laptop,null);
+		}
+		@include mq(small_tablet) {
+			margin: 20px auto 0;
+			@include quick_type($sec_two_content_size_small_tablet,$sec_two_content_line_height_small_tablet,null);
+		}
+		@include mq(xlarge_mobile) {
+			margin: 23px auto 0;
+		}
+	}
+}
+
+
+.sec_two_arrows {
+	display: none;
+	@include mq(small_tablet) {
+		display: flex;
+		@include box(100%,73px);
+	}
+}
+
+
+.sec_two_arrow {
+	@include mq(small_tablet) {
+		flex-basis:50%;
+		background: $sec_two_arrow_bg_color_tablet;
+		cursor: pointer;
+		@include flex(center,center);
+	}
+	svg {
+		@include mq(small_tablet) {
+			path {
+				fill:$sec_two_svg_bg_color_tablet;
+			}
+		}
+	}
+}
+
+
+.sec_two_arrow_left {
+	@include mq(small_tablet) {
+		border-right:1px solid $sec_two_divider_bg_color_tablet;
+	}
+}
+
+.sec_two_arrow_right {
+	@include mq(small_tablet) {
+		svg {
+			transform: rotate(180deg);
+		}
+	}
+}
+
